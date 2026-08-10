@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import Favorites from "./components/Favorites.jsx";
+import Footer from "./components/Footer";
 import "./App.css";
 function Countries() {
   return <h1>Explore Countries 🌍</h1>;
@@ -21,6 +22,7 @@ function App() {
         <Route path="/favorites" element={<Favorites />} />{" "}
         <Route path="/about" element={<About />} />{" "}
       </Routes>{" "}
+      <Footer />{" "}
     </BrowserRouter>
   );
 }
