@@ -5,13 +5,13 @@ function Navbar() {
   return (
     <nav className="navbar">
       <Link to="/" className="logo">
-        🌎 GlobeGuide
+         GlobeGuide
       </Link>
 
       <div className="nav-links">
         <Link to="/">Home</Link>
         <Link to="/countries">Explore Countries</Link>
-        <Link to="/favorites">❤️ Favorites</Link>
+        <Link to="/favorites">Favorites</Link>
         <Link to="/about">About</Link>
       </div>
     </nav>
