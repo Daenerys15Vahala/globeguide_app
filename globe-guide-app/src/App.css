@@ -132,3 +132,16 @@
     flex-direction: column;
   }
 }
+
+
+/*FOOTER*/
+.footer {
+  background-color: #0f3d5e;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.footer p {
+  margin: 8px 0;
+}
