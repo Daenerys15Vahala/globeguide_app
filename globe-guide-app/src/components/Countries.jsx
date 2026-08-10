@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import CountryCard from "./CountryCard";
 
 function Countries() {
   const [countries, setCountries] = useState([]);
@@ -8,7 +7,11 @@ function Countries() {
     fetch("https://restcountries.com/v3.1/all")
       .then((response) => response.json())
       .then((data) => {
+        console.log(data);
         setCountries(data);
+      })
+      .catch((error) => {
+        console.error("Error fetching countries:", error);
       });
   }, []);
 
@@ -16,11 +19,11 @@ function Countries() {
     <div>
       <h1>Explore Countries 🌍</h1>
 
-      <div className="country-container">
-        {countries.map((country) => (
-          <CountryCard key={country.cca3} country={country} />
-        ))}
-      </div>
+      {countries.map((country) => (
+        <div key={country.cca3}>
+          <h2>{country.name.common}</h2>
+        </div>
+      ))}
     </div>
   );
 }
