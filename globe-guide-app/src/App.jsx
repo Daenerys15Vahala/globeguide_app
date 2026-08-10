@@ -8,10 +8,6 @@ import Footer from "./components/Footer";
 
 import "./App.css";
 
-function Countries() {
-  return <h1>Explore Countries 🌍</h1>;
-}
-
 function About() {
   return <h1>About GlobeGuide ℹ️</h1>;
 }
