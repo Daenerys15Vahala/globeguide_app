@@ -1,0 +1,5 @@
+function CountryCard ({country}) {
+    return (
+        
+    )
+}
