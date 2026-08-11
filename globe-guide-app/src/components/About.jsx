@@ -1,19 +1,30 @@
 import { Link } from "react-router-dom";
 
-function CountryCard({ country }) {
+function About() {
   return (
-    <div className="country-card">
-      <img src={country.flags.png} alt={`${country.name} flag`} />
+    <main className="about-page">
+      <section className="about-hero">
+        <h1>About GlobeGuide</h1>
+        <p>Your passport to discovering the world.</p>
+      </section>
 
-      <h2>{country.name}</h2>
+      <section className="about-section">
+        <h2>What is GlobeGuide?</h2>
+        <p>GlobeGuide is an interactive web app for exploring countries in a simple, fun way.</p>
+      </section>
 
-      <p>Region: {country.region}</p>
+      <section className="about-section">
+        <h2>Why use it?</h2>
+        <p>Discover country details, save favorites, and explore new places from one place.</p>
+      </section>
 
-      <p>Capital: {country.capital || "N/A"}</p>
-
-      <Link to={`/country/${country.name}`}>View Details</Link>
-    </div>
+      <section className="about-section">
+        <Link to="/countries" className="explore-button">
+          Explore Countries
+        </Link>
+      </section>
+    </main>
   );
 }
 
-export default CountryCard;
+export default About;
