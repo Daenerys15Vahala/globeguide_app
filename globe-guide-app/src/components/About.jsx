@@ -37,7 +37,7 @@ function About() {
                 <h2>Ready to explore the world?</h2>
 
                 <Link to="/countries">
-                <button>Explore Countries</button>
+                <button className="button">Explore Countries</button>
                 </Link>
             </section>
         </main>

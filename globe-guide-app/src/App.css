@@ -227,6 +227,14 @@
   transform: translateY(-5px);
 }
 
+.button {
+  border-radius: 5px;
+  border-color: #1976a8;
+  background-color:#246786;
+  font-size: 20px;
+  margin-top: 25px;
+}
+
 /*FOOTER*/
 .footer {
   background-color: #0f3d5e;
