@@ -28,8 +28,18 @@ function About() {
             <section className="about-section">
                 <h2>Why GlobeGuide</h2>
                 <p>GlobeGuide brings useful information about countries together in one easy.</p>
-                <p>Whether you're curious about a country's capital, language, population, or location</p>
+                <p>Whether you're curious about a country's capital, language, population, or location, GlobeGuide makes exploring the world easier.</p>
+            </section>
+
+            <section className="about-section">
+                <h2>Ready to explore the world?</h2>
+
+                <Link to="/countries">
+                <button>Explore Countries</button>
+                </Link>
             </section>
         </main>
-    )
+    );
 }
+
+export default About;
