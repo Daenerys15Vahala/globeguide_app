@@ -2,25 +2,21 @@
 import { useEffect, useState } from "react";
 import CountryCard from "./CountryCard";
 
-function Countries({favorites, setFavorites}) {
+function Countries({ favorites = [], setFavorites = () => {} }) {
   const [countries, setCountries] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     fetch("https://countries.dev/countries")
       .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        setCountries(data);
-      })
-      .catch((error) => {
-        console.error("Error fetching countries:", error);
-      });
+      .then((data) => setCountries(data))
+      .catch((error) => console.error("Error fetching countries:", error));
   }, []);
 
-  const filteredCountries = countries.filter((country) =>
-    country.name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const filteredCountries = countries.filter((country) => {
+    const countryName = country?.name?.common?.toLowerCase() || "";
+    return countryName.includes(searchTerm.toLowerCase());
+  });
 
   return (
     <main>

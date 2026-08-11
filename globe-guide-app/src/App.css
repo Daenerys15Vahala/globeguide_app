@@ -460,6 +460,16 @@ body {
     margin-top: 25px;
   }
 
+  /* Fav Button */
+
+  .fav-button{
+    cursor: pointer;
+  }
+
+  .fav-button:hover {
+    transform: scale(1.15);
+  }
+
 /*FOOTER*/
 .footer {
   background-color: #0f3d5e;
