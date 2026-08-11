@@ -1,4 +1,7 @@
-/*NAV BAR */
+/* =========================================
+   NAVBAR
+   ========================================= */
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -24,12 +27,18 @@
   text-decoration: none;
 }
 
-/*HOME PAGE*/
+
+/* =========================================
+   HOME PAGE
+   ========================================= */
 
 .home {
   min-height: 100vh;
   background-color: #f4f8fb;
 }
+
+
+/* Hero section */
 
 .hero {
   min-height: 550px;
@@ -67,6 +76,9 @@
   color: #e0f2fe;
 }
 
+
+/* Explore button */
+
 .explore-button {
   display: inline-block;
   padding: 14px 28px;
@@ -82,6 +94,9 @@
   background-color: #7dd3fc;
   transform: translateY(-2px);
 }
+
+
+/* Features section */
 
 .features {
   padding: 60px 30px;
@@ -123,39 +138,64 @@
   line-height: 1.5;
 }
 
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 38px;
-  }
 
-  .feature-cards {
-    flex-direction: column;
-  }
-}
-/*CountryCard*/
+/* =========================================
+   COUNTRY CARDS
+   ========================================= */
+
+
+/* Container for all country cards */
+
 .country-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 25px;
   padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
+
+
+/* Individual country card */
 
 .country-card {
-  background: white;
+  background-color: white;
+  padding: 25px;
   border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  min-width: 0;
+  overflow-wrap: break-word;
 }
 
-.country-card img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-}
+
+/* Country name */
 
 .country-card h2 {
   color: #0f3d5e;
+  margin-bottom: 15px;
 }
+
+
+/* Country information */
+
+.country-card p {
+  color: #475569;
+  margin: 8px 0;
+}
+
+
+/* Country flag */
+
+.country-card img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 15px;
+}
+
+
+/* View Details link */
 
 .country-card a {
   display: inline-block;
@@ -165,16 +205,15 @@
   font-weight: bold;
 }
 
-@media (max-width: 768px) {
-  .country-container {
-    grid-template-columns: 1fr;
-  }
+.country-card a:hover {
+  color: #18384f;
 }
 
 
+/* =========================================
+   FOOTER
+   ========================================= */
 
-
-/*FOOTER*/
 .footer {
   background-color: #0f3d5e;
   color: white;
@@ -184,4 +223,28 @@
 
 .footer p {
   margin: 8px 0;
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN
+   ========================================= */
+
+@media (max-width: 768px) {
+
+  /* Home page on smaller screens */
+
+  .hero h1 {
+    font-size: 38px;
+  }
+
+  .feature-cards {
+    flex-direction: column;
+  }
+
+  /* Country cards on smaller screens */
+
+  .country-container {
+    grid-template-columns: 1fr;
+  }
 }
