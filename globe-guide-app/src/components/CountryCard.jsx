@@ -1,14 +1,19 @@
-
 import { Link } from "react-router-dom";
 
-function CountryCard({ country, favorites, setFavorites}) {
-  const isFavorite = favorites.some((favorite) => favorite.name === country.name);
+function CountryCard({ country, favorites = [], setFavorites = () => {} }) {
+  // Get the country name first
+  const countryName = country?.name || "Unknown";
+
+  // Check if this country is already a favorite
+  const isFavorite = favorites.some(
+    (favorite) => favorite?.name === countryName,
+  );
 
   function handleFavorite() {
     if (isFavorite) {
-      setFavorites(favorites.filter((favorite) => favorite.name !== country.name
-    )
-);
+      setFavorites(
+        favorites.filter((favorite) => favorite?.name !== countryName),
+      );
     } else {
       setFavorites([...favorites, country]);
     }
@@ -16,7 +21,7 @@ function CountryCard({ country, favorites, setFavorites}) {
 
   return (
     <div className="country-card">
-      <button className="favorite-button" onClick={handleFavorite}>
+      <button className="fav-button" onClick={handleFavorite}>
         {isFavorite ? "❤️" : "🤍"}
       </button>
 
@@ -25,12 +30,12 @@ function CountryCard({ country, favorites, setFavorites}) {
         alt={`${countryName} flag`}
       />
 
-      <h2>{country.name}</h2>
+      <h2>{countryName}</h2>
 
       <p>Region: {country.region || "N/A"}</p>
 
       <p>Capital: {country.capital || "N/A"}</p>
-      
+
       <Link to={`/country/${encodeURIComponent(countryName)}`}>
         View Details
       </Link>
@@ -39,4 +44,3 @@ function CountryCard({ country, favorites, setFavorites}) {
 }
 
 export default CountryCard;
-
