@@ -22,11 +22,7 @@ function Countries() {
 
       <div className="country-container">
         {countries.map((country) => (
-          <div key={country.code}>
-            <h2>{country.name}</h2>
-            <p>Capital: {country.capital}</p>
-            <p>Region: {country.region}</p>
-          </div>
+          <CountryCard key={country.code} country={country} />
         ))}
       </div>
     </div>
