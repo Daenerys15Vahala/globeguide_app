@@ -23,7 +23,7 @@ function About() {
                     <p>💰Currencies</p>
                     <p>👥Population</p>
                     <p>🕐Time Zones</p>
-                    <p>📍Lcations</p>
+                    <p>📍Locations</p>
                 </div>
             </section>
 

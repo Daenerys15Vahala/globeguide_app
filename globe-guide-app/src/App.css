@@ -205,7 +205,7 @@
   max-width: 700px;
   margin: 10px auto;
   line-height: 1.7;
-  color: #a38f8f;
+  color: #e4d8d8;
 }
 
 .about-features {
@@ -217,7 +217,7 @@
 
 .about-features p {
   padding: 25px;
-  background-color: #3c424a;
+  background-color: #515356;
   border-radius: 12px;
   font-size: 1.1rem;
   transition: transform 0.3s ease;
