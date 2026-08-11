@@ -16,7 +16,7 @@ function Countries({ favorites = [], setFavorites = () => {} }) {
   }, []);
 
   const filteredCountries = countries.filter((country) => {
-    const countryName = country?.name?.common?.toLowerCase() || "";
+    const countryName = country.name.toLowerCase() || "";
     return countryName.includes(searchTerm.toLowerCase());
   });
 

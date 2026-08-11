@@ -2,14 +2,15 @@
 import { Link } from "react-router-dom";
 
 function CountryCard({ country, favorites = [], setFavorites = () => {} }) {
-  const countryName = country?.name?.common || country?.name || "Unknown";
-  const isFavorite = favorites.some((favorite) => favorite?.name?.common === countryName || favorite?.name === countryName);
+  const isFavorite = favorites.some((favorite) => favorite.name === country.name);
 
   function handleFavorite() {
     if (isFavorite) {
-      setFavorites(favorites.filter((favorite) => (favorite?.name?.common || favorite?.name) !== countryName));
+      setFavorites(favorites.filter((favorite) => favorite.name !== country.name
+    )
+);
     } else {
-      setFavorites([...favorites, { ...country, name: { common: countryName } }]);
+      setFavorites([...favorites, country]);
     }
   }
 
@@ -24,7 +25,7 @@ function CountryCard({ country, favorites = [], setFavorites = () => {} }) {
         alt={`${countryName} flag`}
       />
 
-      <h2>{countryName}</h2>
+      <h2>{country.name}</h2>
 
       <p>Region: {country.region || "N/A"}</p>
 
