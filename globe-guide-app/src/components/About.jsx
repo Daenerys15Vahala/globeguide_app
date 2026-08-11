@@ -11,6 +11,19 @@ function About() {
                 <p>GlobeGuide is an interactive web application designed to make exploring countries simple and fun.</p>
                 <p>Discover cultures, languages, populations, currencies, locations, and more.</p>
             </section>
+
+            <section className="about-section">
+                <h2>What Can You Explore?</h2>
+
+            <div className="about-features">
+                <p>US Country Information</p>
+                <p>Languages</p>
+                <p>Currencies</p>
+                <p>Population</p>
+                <p>🕐Time Zones</p>
+                <p>📍Lcations</p>
+            </div>
+          </section>
         </main>
     )
 }
