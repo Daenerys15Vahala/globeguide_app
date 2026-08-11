@@ -24,9 +24,10 @@ body {
   flex: 1;
   width: 100%;
 }
+
 /* =========================================
    NAVBAR
-   ========================================= */
+========================================= */
 
 .navbar {
   display: flex;
@@ -34,6 +35,7 @@ body {
   align-items: center;
   padding: 20px 40px;
   background-color: #1e3a5f;
+  gap: 20px;
 }
 
 .logo {
@@ -41,6 +43,23 @@ body {
   text-decoration: none;
   font-size: 24px;
   font-weight: bold;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-left: auto;
+}
+
+.nav-search {
+  border: none;
+  border-radius: 999px;
+  padding: 10px 14px;
+  min-width: 220px;
+  outline: none;
+  background-color: #246786;
 }
 
 .nav-links {
@@ -55,14 +74,12 @@ body {
 
 /* =========================================
    HOME PAGE
-   ========================================= */
+========================================= */
 
 .home {
   min-height: 100vh;
   background-color: #f4f8fb;
 }
-
-/* Hero section */
 
 .hero {
   min-height: 550px;
@@ -100,8 +117,6 @@ body {
   color: #e0f2fe;
 }
 
-/* Explore button */
-
 .explore-button {
   display: inline-block;
   padding: 14px 28px;
@@ -117,8 +132,6 @@ body {
   background-color: #7dd3fc;
   transform: translateY(-2px);
 }
-
-/* Features section */
 
 .features {
   padding: 60px 30px;
@@ -162,9 +175,7 @@ body {
 
 /* =========================================
    COUNTRY CARDS
-   ========================================= */
-
-/* Container for all country cards */
+========================================= */
 
 .country-container {
   display: grid;
@@ -174,8 +185,6 @@ body {
   max-width: 1200px;
   margin: 0 auto;
 }
-
-/* Individual country card */
 
 .country-card {
   background-color: white;
@@ -187,21 +196,15 @@ body {
   overflow-wrap: break-word;
 }
 
-/* Country name */
-
 .country-card h2 {
   color: #0f3d5e;
   margin-bottom: 15px;
 }
 
-/* Country information */
-
 .country-card p {
   color: #475569;
   margin: 8px 0;
 }
-
-/* Country flag */
 
 .country-card img {
   max-width: 100%;
@@ -209,8 +212,6 @@ body {
   display: block;
   margin-bottom: 15px;
 }
-
-/* View Details link */
 
 .country-card a {
   display: inline-block;
@@ -225,8 +226,28 @@ body {
 }
 
 /* =========================================
+   COUNTRY DETAILS
+========================================= */
+
+.country-details {
+  padding: 50px 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.country-details h1 {
+  color: #0f3d5e;
+}
+
+.country-details img {
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+}
+
+/* =========================================
    FOOTER
-   ========================================= */
+========================================= */
 
 .footer {
   background-color: #0f3d5e;
@@ -240,8 +261,88 @@ body {
 }
 
 /* =========================================
+   ABOUT PAGE
+========================================= */
+
+.about-page {
+  padding: 40px 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.about-hero {
+  text-align: center;
+  padding: 60px 20px;
+  margin-bottom: 50px;
+}
+
+.about-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  color: #0f3d5e;
+}
+
+.about-hero p {
+  font-size: 1.2rem;
+  color: #64748b;
+}
+
+.about-section {
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.about-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #0f3d5e;
+}
+
+.about-section p {
+  max-width: 700px;
+  margin: 10px auto;
+  line-height: 1.7;
+  color: #475569;
+}
+
+.about-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.about-features p {
+  padding: 25px;
+  background-color: #515356;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.about-features p:hover {
+  transform: translateY(-5px);
+}
+
+.about-section button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  background-color: #1976a8;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.about-section button:hover {
+  background-color: #0f3d5e;
+}
+
+/* =========================================
    RESPONSIVE DESIGN
-   ========================================= */
+========================================= */
 
 @media (max-width: 768px) {
   /* Navbar */
@@ -257,6 +358,16 @@ body {
     font-size: 22px;
   }
 
+  .nav-actions {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .nav-search {
+    width: 100%;
+    min-width: 0;
+  }
+
   .nav-links {
     width: 100%;
     display: flex;
@@ -268,7 +379,6 @@ body {
   .nav-links a {
     font-size: 15px;
   }
-
 
   /* Home */
 
@@ -298,7 +408,6 @@ body {
     gap: 20px;
   }
 
-
   /* Country cards */
 
   .country-container {
@@ -309,7 +418,6 @@ body {
   .country-card {
     width: auto;
   }
-
 
   /* Country details */
 
@@ -325,7 +433,24 @@ body {
     max-width: 90%;
   }
 
+  /* About */
 
+  .about-page {
+    padding: 30px 20px;
+  }
+
+  .about-hero {
+    padding: 40px 15px;
+    margin-bottom: 30px;
+  }
+
+  .about-hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .about-features {
+    grid-template-columns: 1fr;
+  }
 
   /* Footer */
 
@@ -336,51 +461,4 @@ body {
   .footer p {
     font-size: 14px;
   }
-}
-
-
-
-/* =========================================
-   ABOUT PAGE
-   ========================================= */
-
-.about {
-  width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 50px 30px;
-  text-align: center;
-}
-
-.about h1 {
-  color: white;
-  font-size: 40px;
-  margin-bottom: 25px;
-}
-
-.about > p {
-  color: #94a3b8;
-  font-size: 18px;
-  line-height: 1.6;
-  margin-bottom: 30px;
-}
-
-.about-section {
-  background-color: #ffffff;
-  padding: 25px 30px;
-  margin: 25px 0;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  text-align: left;
-}
-
-.about-section h2 {
-  color: #0f3d5e;
-  margin: 0 0 10px 0;
-}
-
-.about-section p {
-  color: #475569;
-  line-height: 1.6;
-  margin: 0;
 }
