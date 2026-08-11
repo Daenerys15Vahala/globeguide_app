@@ -3,10 +3,12 @@ import { useEffect, useState } from "react";
 import CountryCard from "./CountryCard";
 
 function Countries({ favorites = [], setFavorites = () => {} }) {
+  //Storing the countries and handling the search box
   const [countries, setCountries] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
+    //Getting the counrty data from api
     fetch("https://countries.dev/countries")
       .then((response) => response.json())
       .then((data) => setCountries(data))
@@ -30,11 +32,7 @@ function Countries({ favorites = [], setFavorites = () => {} }) {
           onChange={(event) => setSearchTerm(event.target.value)}
         />
 
-        {searchTerm && (
-          <button onClick={() => setSearchTerm("")}>
-            Clear
-          </button>
-        )}
+        {searchTerm && <button onClick={() => setSearchTerm("")}>Clear</button>}
       </div>
 
       <p>{filteredCountries.length} countries found</p>

@@ -19,15 +19,20 @@ function CountryCard({ country, favorites = [], setFavorites = () => {} }) {
         {isFavorite ? "❤️" : "🤍"}
       </button>
 
-      <img src={country.flags?.png || country.flag} alt={`${countryName} flag`} />
+      <img
+        src={country.flags?.png || country.flag}
+        alt={`${countryName} flag`}
+      />
 
       <h2>{countryName}</h2>
 
       <p>Region: {country.region || "N/A"}</p>
 
-      <p>Capital: {country.capital?.[0] || "N/A"}</p>
-
-      <Link to={`/country/${encodeURIComponent(countryName)}`}>View Details</Link>
+      <p>Capital: {country.capital || "N/A"}</p>
+      
+      <Link to={`/country/${encodeURIComponent(countryName)}`}>
+        View Details
+      </Link>
     </div>
   );
 }
