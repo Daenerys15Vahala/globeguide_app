@@ -4,7 +4,7 @@ function About() {
     return (
         <main className="about-page">
             <section className="about-hero">
-                <h1>About GlobeGuide</h1>
+                <h1>About GlobeGuide🌎</h1>
                 <p>Your passport to discovering the world.</p>
             </section>
 
@@ -18,7 +18,7 @@ function About() {
                 <h2>What Can You Explore?</h2>
 
                 <div className="about-features">
-                    <p>US Country Information</p>
+                    <p>Country Info🌎</p>
                     <p>🗣️Languages</p>
                     <p>💰Currencies</p>
                     <p>👥Population</p>
@@ -28,7 +28,7 @@ function About() {
             </section>
 
             <section className="about-section">
-                <h2>Why GlobeGuide</h2>
+                <h2>Why GlobeGuide🌎</h2>
                 <p>GlobeGuide brings useful information about countries together in one easy.</p>
                 <p>Whether you're curious about a country's capital, language, population, or location, GlobeGuide makes exploring the world easier.</p>
             </section>
