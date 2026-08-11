@@ -1,0 +1,62 @@
+
+import { useEffect, useState } from "react";
+import CountryCard from "./CountryCard";
+
+function Countries() {
+  const [countries, setCountries] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+
+  useEffect(() => {
+    fetch("https://countries.dev/countries")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setCountries(data);
+      })
+      .catch((error) => {
+        console.error("Error fetching countries:", error);
+      });
+  }, []);
+
+  const filteredCountries = countries.filter((country) =>
+    country.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  return (
+    <main>
+      <h1>Explore Countries 🌍</h1>
+
+      <div className="search-container">
+        <input
+          type="text"
+          placeholder="Search for a country..."
+          value={searchTerm}
+          onChange={(event) => setSearchTerm(event.target.value)}
+        />
+
+        {searchTerm && (
+          <button onClick={() => setSearchTerm("")}>
+            Clear
+          </button>
+        )}
+      </div>
+
+      <p>{filteredCountries.length} countries found</p>
+
+      <div className="country-container">
+        {filteredCountries.length > 0 ? (
+          filteredCountries.map((country) => (
+            <CountryCard
+              key={country.alpha2Code}
+              country={country}
+            />
+          ))
+        ) : (
+          <p>No countries found.</p>
+        )}
+      </div>
+    </main>
+  );
+}
+
+export default Countries;

@@ -1,4 +1,34 @@
-/*NAV BAR */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-content {
+  flex: 1;
+  width: 100%;
+}
+
+/* =========================================
+   NAVBAR
+========================================= */
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -42,23 +72,9 @@
   text-decoration: none;
 }
 
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .nav-actions {
-    width: 100%;
-  }
-
-  .nav-search {
-    width: 100%;
-    min-width: 0;
-  }
-}
-
-/*HOME PAGE*/
+/* =========================================
+   HOME PAGE
+========================================= */
 
 .home {
   min-height: 100vh;
@@ -157,17 +173,96 @@
   line-height: 1.5;
 }
 
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 38px;
-  }
+/* =========================================
+   COUNTRY CARDS
+========================================= */
 
-  .feature-cards {
-    flex-direction: column;
-  }
+.country-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* ABOUT */
+.country-card {
+  background-color: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+
+.country-card h2 {
+  color: #0f3d5e;
+  margin-bottom: 15px;
+}
+
+.country-card p {
+  color: #475569;
+  margin: 8px 0;
+}
+
+.country-card img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.country-card a {
+  display: inline-block;
+  margin-top: 15px;
+  color: #1976a8;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.country-card a:hover {
+  color: #18384f;
+}
+
+/* =========================================
+   COUNTRY DETAILS
+========================================= */
+
+.country-details {
+  padding: 50px 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.country-details h1 {
+  color: #0f3d5e;
+}
+
+.country-details img {
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+  background-color: #0f3d5e;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.footer p {
+  margin: 8px 0;
+}
+
+/* =========================================
+   ABOUT PAGE
+========================================= */
 
 .about-page {
   padding: 40px 20px;
@@ -175,7 +270,7 @@
   margin: 0 auto;
 }
 
-.about-hero{
+.about-hero {
   text-align: center;
   padding: 60px 20px;
   margin-bottom: 50px;
@@ -184,28 +279,30 @@
 .about-hero h1 {
   font-size: 3rem;
   margin-bottom: 15px;
+  color: #0f3d5e;
 }
 
-.about-hero p{
+.about-hero p {
   font-size: 1.2rem;
-  color: #a38f8f;
+  color: #64748b;
 }
 
-.about-section{
+.about-section {
   margin-bottom: 60px;
   text-align: center;
 }
 
-.about-section h2{
+.about-section h2 {
   font-size: 2rem;
   margin-bottom: 20px;
+  color: #0f3d5e;
 }
 
-.about-section p{
+.about-section p {
   max-width: 700px;
   margin: 10px auto;
   line-height: 1.7;
-  color: #e4d8d8;
+  color: #475569;
 }
 
 .about-features {
@@ -220,6 +317,7 @@
   background-color: #515356;
   border-radius: 12px;
   font-size: 1.1rem;
+  color: white;
   transition: transform 0.3s ease;
 }
 
@@ -235,14 +333,140 @@
   margin-top: 25px;
 }
 
-/*FOOTER*/
-.footer {
-  background-color: #0f3d5e;
+.about-section button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  background-color: #1976a8;
   color: white;
-  text-align: center;
-  padding: 30px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
 }
 
-.footer p {
-  margin: 8px 0;
+.about-section button:hover {
+  background-color: #0f3d5e;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 768px) {
+  /* Navbar */
+
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 20px;
+  }
+
+  .logo {
+    font-size: 22px;
+  }
+
+  .nav-actions {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .nav-search {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .nav-links {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px 18px;
+  }
+
+  .nav-links a {
+    font-size: 15px;
+  }
+
+  /* Home */
+
+  .hero {
+    min-height: 400px;
+    padding: 50px 20px;
+  }
+
+  .hero h1 {
+    font-size: 38px;
+  }
+
+  .hero-text {
+    font-size: 16px;
+  }
+
+  .features {
+    padding: 40px 20px;
+  }
+
+  .features h2 {
+    font-size: 28px;
+  }
+
+  .feature-cards {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* Country cards */
+
+  .country-container {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .country-card {
+    width: auto;
+  }
+
+  /* Country details */
+
+  .country-details {
+    padding: 30px 20px;
+  }
+
+  .country-details h1 {
+    font-size: 32px;
+  }
+
+  .country-details img {
+    max-width: 90%;
+  }
+
+  /* About */
+
+  .about-page {
+    padding: 30px 20px;
+  }
+
+  .about-hero {
+    padding: 40px 15px;
+    margin-bottom: 30px;
+  }
+
+  .about-hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .about-features {
+    grid-template-columns: 1fr;
+  }
+
+  /* Footer */
+
+  .footer {
+    padding: 25px 15px;
+  }
+
+  .footer p {
+    font-size: 14px;
+  }
 }
