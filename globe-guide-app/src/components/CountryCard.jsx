@@ -1,25 +1,45 @@
 
 import { Link } from "react-router-dom";
 
-function CountryCard({ country }) {
-  return (
-    <div className="country-card">
-      <img
-        src={country.flags?.png || country.flag}
-        alt={`${country.name} flag`}
-      />
+function CountryCard({ country, favorites, setFavorites }) {
+    const isFavorite = favorites.some((favorite) => favorite.name === country.name);
 
-      <h2>{country.name}</h2>
+    function handleFavorite() {
+        if (isFavorite) {
+            setFavorites(
+                favorites.filer(
+                    (favorite) => favorite.name !== country.name
+                )
+            );
+        } else {
+            setFavorites([...favorites, country]);
+        }
+    }
 
-      <p>Region: {country.region || "N/A"}</p>
+    return (
+        <div className="country-card">
 
-      <p>Capital: {country.capital || "N/A"}</p>
+            <button className="fav-button"
+                onClick={handleFavorite}>
+                {isFavorite ? "❤️" : "🤍"}
+            </button>
 
-      <Link to={`/country/${country.name}`}>
-        View Details
-      </Link>
-    </div>
-  );
+            <img
+                src={country.flags?.png || country.flag}
+                alt={`${country.name} flag`}
+            />
+
+            <h2>{country.name}</h2>
+
+            <p>Region: {country.region || "N/A"}</p>
+
+            <p>Capital: {country.capital || "N/A"}</p>
+
+            <Link to={`/country/${country.name}`}>
+                View Details
+            </Link>
+        </div>
+    );
 }
 
 export default CountryCard;
