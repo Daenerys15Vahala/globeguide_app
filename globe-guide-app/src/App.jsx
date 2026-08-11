@@ -18,14 +18,14 @@ function App() {
     <BrowserRouter>
       <Navbar />
 
-      <Routes>
+    <main className="page-content"> <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/countries" element={<Countries />} />
         <Route path="/country/:name" element={<CountryDetails />} />
         <Route path="/favorites" element={<Favorites />} />
         <Route path="/about" element={<About />} />
       </Routes>
-
+</main> 
       <Footer />
     </BrowserRouter>
   );

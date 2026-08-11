@@ -1,3 +1,20 @@
+html,
+body,
+#root {
+  min-height: 100%;
+  margin: 0;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-content {
+  flex: 1;
+
+}
 /* =========================================
    NAVBAR
    ========================================= */
@@ -27,7 +44,6 @@
   text-decoration: none;
 }
 
-
 /* =========================================
    HOME PAGE
    ========================================= */
@@ -36,7 +52,6 @@
   min-height: 100vh;
   background-color: #f4f8fb;
 }
-
 
 /* Hero section */
 
@@ -76,7 +91,6 @@
   color: #e0f2fe;
 }
 
-
 /* Explore button */
 
 .explore-button {
@@ -94,7 +108,6 @@
   background-color: #7dd3fc;
   transform: translateY(-2px);
 }
-
 
 /* Features section */
 
@@ -138,11 +151,9 @@
   line-height: 1.5;
 }
 
-
 /* =========================================
    COUNTRY CARDS
    ========================================= */
-
 
 /* Container for all country cards */
 
@@ -154,7 +165,6 @@
   max-width: 1200px;
   margin: 0 auto;
 }
-
 
 /* Individual country card */
 
@@ -168,7 +178,6 @@
   overflow-wrap: break-word;
 }
 
-
 /* Country name */
 
 .country-card h2 {
@@ -176,14 +185,12 @@
   margin-bottom: 15px;
 }
 
-
 /* Country information */
 
 .country-card p {
   color: #475569;
   margin: 8px 0;
 }
-
 
 /* Country flag */
 
@@ -193,7 +200,6 @@
   display: block;
   margin-bottom: 15px;
 }
-
 
 /* View Details link */
 
@@ -208,7 +214,6 @@
 .country-card a:hover {
   color: #18384f;
 }
-
 
 /* =========================================
    FOOTER
@@ -225,13 +230,11 @@
   margin: 8px 0;
 }
 
-
 /* =========================================
    RESPONSIVE DESIGN
    ========================================= */
 
 @media (max-width: 768px) {
-
   /* Home page on smaller screens */
 
   .hero h1 {

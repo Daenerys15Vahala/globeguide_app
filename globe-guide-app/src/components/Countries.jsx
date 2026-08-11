@@ -1,8 +1,10 @@
+
 import { useEffect, useState } from "react";
 import CountryCard from "./CountryCard";
 
 function Countries() {
   const [countries, setCountries] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     fetch("https://countries.dev/countries")
@@ -16,16 +18,44 @@ function Countries() {
       });
   }, []);
 
+  const filteredCountries = countries.filter((country) =>
+    country.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
-    <div>
+    <main>
       <h1>Explore Countries 🌍</h1>
 
-      <div className="country-container">
-        {countries.map((country) => (
-          <CountryCard key={country.code} country={country} />
-        ))}
+      <div className="search-container">
+        <input
+          type="text"
+          placeholder="Search for a country..."
+          value={searchTerm}
+          onChange={(event) => setSearchTerm(event.target.value)}
+        />
+
+        {searchTerm && (
+          <button onClick={() => setSearchTerm("")}>
+            Clear
+          </button>
+        )}
       </div>
-    </div>
+
+      <p>{filteredCountries.length} countries found</p>
+
+      <div className="country-container">
+        {filteredCountries.length > 0 ? (
+          filteredCountries.map((country) => (
+            <CountryCard
+              key={country.alpha2Code}
+              country={country}
+            />
+          ))
+        ) : (
+          <p>No countries found.</p>
+        )}
+      </div>
+    </main>
   );
 }
 

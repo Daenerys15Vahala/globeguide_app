@@ -7,9 +7,10 @@ function CountryDetails() {
   const [country, setCountry] = useState(null);
 
   useEffect(() => {
-    fetch(`https://restcountries.com/v3.1/name/${name}`)
+    fetch(`https://countries.dev/name/${encodeURIComponent(name)}`)
       .then((response) => response.json())
       .then((data) => {
+        console.log(data);
         setCountry(data[0]);
       })
       .catch((error) => {
@@ -23,26 +24,28 @@ function CountryDetails() {
 
   return (
     <div className="country-details">
-      <h1>{country.name.common}</h1>
+      <h1>{country.name}</h1>
 
-      <img src={country.flags.png} alt={`${country.name.common} flag`} />
+      <img src={country.flags.png} alt={`${country.name} flag`} />
 
       <p>🌎 Region: {country.region}</p>
 
       <p>👥 Population: {country.population.toLocaleString()}</p>
 
-      <p>🏛️ Capital: {country.capital?.[0] || "N/A"}</p>
+      <p>🏛️ Capital: {country.capital || "N/A"}</p>
 
       <p>
         🗣️ Languages:{" "}
         {country.languages
-          ? Object.values(country.languages).join(", ")
+          ? country.languages.map((language) => language.name).join(", ")
           : "N/A"}
       </p>
 
       <p>
         💰 Currency:{" "}
-        {country.currencies ? Object.values(country.currencies)[0].name : "N/A"}
+        {country.currencies
+          ? country.currencies.map((currency) => currency.name).join(", ")
+          : "N/A"}
       </p>
     </div>
   );
