@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
@@ -21,7 +22,10 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/countries" element={<Countries />} />
           <Route path="/country/:name" element={<CountryDetails />} />
-          <Route path="/favorites" element={<Favorites favorites={favorites} />} />
+          <Route
+            path="/favorites"
+            element={<Favorites favorites={favorites} />}
+          />
           <Route path="/about" element={<About />} />
         </Routes>
       </main>
