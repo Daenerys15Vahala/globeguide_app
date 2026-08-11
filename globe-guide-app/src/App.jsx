@@ -11,6 +11,7 @@ import Footer from "./components/Footer";
 import "./App.css";
 
 function App() {
+  const [favorites, setFavorites] = useState([]);
   return (
     <BrowserRouter>
       <Navbar />
@@ -20,7 +21,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/countries" element={<Countries />} />
           <Route path="/country/:name" element={<CountryDetails />} />
-          <Route path="/favorites" element={<Favorites />} />
+          <Route path="/favorites" element={<Favorites favorites={favorites} />} />
           <Route path="/about" element={<About />} />
         </Routes>
       </main>

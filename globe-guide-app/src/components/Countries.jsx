@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import CountryCard from "./CountryCard";
 
-function Countries() {
+function Countries({favorites, setFavorites}) {
   const [countries, setCountries] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -49,6 +49,8 @@ function Countries() {
             <CountryCard
               key={country.alpha2Code}
               country={country}
+              favorites={favorites}
+              setFavorites={setFavorites}
             />
           ))
         ) : (
