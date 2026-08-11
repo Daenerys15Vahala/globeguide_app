@@ -326,6 +326,7 @@ body {
   }
 
 
+
   /* Footer */
 
   .footer {
@@ -335,4 +336,51 @@ body {
   .footer p {
     font-size: 14px;
   }
+}
+
+
+
+/* =========================================
+   ABOUT PAGE
+   ========================================= */
+
+.about {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 50px 30px;
+  text-align: center;
+}
+
+.about h1 {
+  color: white;
+  font-size: 40px;
+  margin-bottom: 25px;
+}
+
+.about > p {
+  color: #94a3b8;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.about-section {
+  background-color: #ffffff;
+  padding: 25px 30px;
+  margin: 25px 0;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  text-align: left;
+}
+
+.about-section h2 {
+  color: #0f3d5e;
+  margin: 0 0 10px 0;
+}
+
+.about-section p {
+  color: #475569;
+  line-height: 1.6;
+  margin: 0;
 }

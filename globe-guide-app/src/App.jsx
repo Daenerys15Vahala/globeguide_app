@@ -5,13 +5,12 @@ import Home from "./components/Home";
 import Countries from "./components/Countries";
 import CountryDetails from "./components/CountryDetails";
 import Favorites from "./components/Favorites";
+import About from "./components/About";
 import Footer from "./components/Footer";
 
 import "./App.css";
 
-function About() {
-  return <h1>About GlobeGuide ℹ️</h1>;
-}
+
 
 function App() {
   return (
