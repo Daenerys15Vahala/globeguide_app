@@ -11,7 +11,7 @@ function CountryCard({ country }) {
 
       <p>Capital: {country.capital || "N/A"}</p>
 
-      <Link to={`/country/${country.cca3}`}>View Details</Link>
+      <Link to={`/country/${country.name.common}`}>View Details</Link>
     </div>
   );
 }
