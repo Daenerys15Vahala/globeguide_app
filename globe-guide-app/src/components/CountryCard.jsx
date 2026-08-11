@@ -21,7 +21,7 @@ function CountryCard({ country, favorites = [], setFavorites = () => {} }) {
 
   return (
     <div className="country-card">
-      <button className="fav-button" onClick={handleFavorite}>
+      <button className="favorite-button" onClick={handleFavorite}>
         {isFavorite ? "❤️" : "🤍"}
       </button>
 
