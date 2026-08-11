@@ -325,14 +325,6 @@ body {
   transform: translateY(-5px);
 }
 
-.button {
-  border-radius: 5px;
-  border-color: #1976a8;
-  background-color:#246786;
-  font-size: 20px;
-  margin-top: 25px;
-}
-
 .about-section button {
   padding: 12px 24px;
   border: none;
@@ -460,11 +452,21 @@ body {
     grid-template-columns: 1fr;
   }
 
-  /* Footer */
-
-  .footer {
-    padding: 25px 15px;
+  .button {
+    border-radius: 5px;
+    border-color: #1976a8;
+    background-color: #246786;
+    font-size: 20px;
+    margin-top: 25px;
   }
+
+/*FOOTER*/
+.footer {
+  background-color: #0f3d5e;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+}
 
   .footer p {
     font-size: 14px;
