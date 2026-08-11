@@ -53,14 +53,6 @@ body {
   margin-left: auto;
 }
 
-.nav-search {
-  border: none;
-  border-radius: 999px;
-  padding: 10px 14px;
-  min-width: 220px;
-  outline: none;
-  background-color: #246786;
-}
 
 .nav-links {
   display: flex;
