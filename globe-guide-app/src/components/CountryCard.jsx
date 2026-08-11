@@ -1,7 +1,7 @@
 
 import { Link } from "react-router-dom";
 
-function CountryCard({ country, favorites = [], setFavorites = () => {} }) {
+function CountryCard({ country, favorites, setFavorites}) {
   const isFavorite = favorites.some((favorite) => favorite.name === country.name);
 
   function handleFavorite() {
@@ -16,7 +16,7 @@ function CountryCard({ country, favorites = [], setFavorites = () => {} }) {
 
   return (
     <div className="country-card">
-      <button className="fav-button" onClick={handleFavorite}>
+      <button className="favorite-button" onClick={handleFavorite}>
         {isFavorite ? "❤️" : "🤍"}
       </button>
 
