@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import CountryCard from "./CountryCard";
 
-function Countries({ favorites = [], setFavorites = () => {} }) {
+function Countries({ favorites, setFavorites }) {
   const [countries, setCountries] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 

@@ -20,7 +20,7 @@ function App() {
       <main className="page-content">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/countries" element={<Countries />} />
+          <Route path="/countries" element={<Countries favorites={favorites} setFavorites={setFavorites} />} />
           <Route path="/country/:name" element={<CountryDetails />} />
           <Route
             path="/favorites"
